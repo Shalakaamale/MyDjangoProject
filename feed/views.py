@@ -12,3 +12,15 @@ def like_post(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     Like.objects.get_or_create(post=post, user=request.user)
     return redirect('feed')
+
+from django.contrib.auth.forms import UserCreationForm
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # or change to 'feed' if you want to go to homepage
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
