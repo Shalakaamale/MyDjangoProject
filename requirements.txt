@@ -1,8 +1,2 @@
-Django==4.2.0          # Core Django framework
-mysqlclient==2.1.1     # MySQL database adapter (for MySQL support)
-Pillow==9.5.0          # For image handling (if using ImageField in models)
-gunicorn==20.1.0       # WSGI server for production (to serve Django)
-whitenoise==6.4.0      # For serving static files in production
-python-decouple==3.8   # For managing environment variables
-psycopg2-binary==2.9.6 # (Optional) PostgreSQL adapter (if switching to PostgreSQL)
-django-environ==0.10.0 # (Optional) Alternative to python-decouple
+Django>=4.0,<5.0
+gunicorn
